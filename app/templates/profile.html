@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="mt-4">Profile</h1>
+
+<!-- E-posta Güncelleme -->
+<div class="card text-light mb-4 shadow">
+    <div class="card-header">
+        <h5>Update Email</h5>
+    </div>
+    <div class="card-body">
+        <form method="post" action="/profile/update-email">
+            <div class="mb-3">
+                <label for="new_email" class="form-label">New Email</label>
+                <input type="email" id="new_email" name="new_email" class="form-control" value="{{ user.email }}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Email</button>
+        </form>
+    </div>
+</div>
+
+<!-- Şifre Güncelleme -->
+<div class="card text-light mb-4 shadow">
+    <div class="card-header">
+        <h5>Update Password</h5>
+    </div>
+    <div class="card-body">
+        {% if error %}
+            <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {% endif %}
+        {% if success %}
+            <div class="alert alert-success" role="alert">{{ success }}</div>
+        {% endif %}
+        <form method="post" action="/profile/update-password">
+            <div class="mb-3">
+                <label for="current_password" class="form-label">Current Password</label>
+                <input type="password" id="current_password" name="current_password" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="new_password" class="form-label">New Password</label>
+                <input type="password" id="new_password" name="new_password" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="confirm_password" class="form-label">Confirm New Password</label>
+                <input type="password" id="confirm_password" name="confirm_password" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Password</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

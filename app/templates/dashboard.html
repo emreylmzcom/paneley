@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="mt-4 mb-4">Dashboard</h1>
+<div class="row">
+
+
+    <!-- os_version -->
+    <div class="col-md-4">
+        <div class="card text-light mb-4 shadow">
+            <div class="card-body">
+                <h5 class="card-title">Release</h5>
+                <p class="card-text">{{ release }}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CPU Kullanımı Kartı -->
+    <div class="col-md-4">
+        <div class="card text-light mb-4 shadow">
+            <div class="card-body">
+                <h5 class="card-title">CPU Usage</h5>
+                <p class="card-text">{{ cpu_usage }}%</p>
+            </div>
+        </div>
+    </div>
+    <!-- RAM Kullanımı Kartı -->
+    <div class="col-md-4">
+        <div class="card text-light mb-4 shadow">
+            <div class="card-body">
+                <h5 class="card-title">RAM Usage</h5>
+                <p class="card-text">{{ ram_usage }}%</p>
+            </div>
+        </div>
+    </div>
+    <!-- Disk Kullanımı Kartı -->
+    <div class="col-md-4">
+        <div class="card text-light mb-4 shadow">
+            <div class="card-body">
+                <h5 class="card-title">Disk Usage</h5>
+                <p class="card-text">{{ disk_usage }}%</p>
+            </div>
+        </div>
+    </div>
+    <!-- Disk Total ve Kullanılan Boyut Kartı -->
+    <div class="col-md-4">
+        <div class="card text-light mb-4 shadow">
+            <div class="card-body">
+                <h5 class="card-title">Disk Total Size</h5>
+                <p class="card-text">{{ disk_total }} GB</p>
+            </div>
+        </div>
+    </div>
+
+
+
+        <div class="col-md-4">
+            <div class="card text-light mb-4 shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Disk Free</h5>
+                    <p class="card-text">{{ disk_free }} GB</p>
+                </div>
+            </div>
+        </div>
+
+</div>
+{% endblock %}
