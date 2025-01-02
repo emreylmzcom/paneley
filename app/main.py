@@ -4,7 +4,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
-from app.routers import auth, profile, dns
+from app.routers import auth, profile, dns, domain
 import time
 
 
@@ -58,3 +58,4 @@ async def dashboard(request: Request):
 app.include_router(auth.router)
 app.include_router(profile.router)
 app.include_router(dns.router)
+app.include_router(domain.router)

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Domain Management</h1>
+
+<!-- Domain Ekleme -->
+<form method="post" action="/domain/add-domain">
+    <label for="domain_name">Domain Name:</label>
+    <input type="text" id="domain_name" name="domain_name" required>
+    <button type="submit">Add Domain</button>
+</form>
+
+<!-- Subdomain Ekleme -->
+<form method="post" action="/domain/add-subdomain">
+    <label for="domain_name">Parent Domain:</label>
+    <input type="text" id="domain_name" name="domain_name" required>
+    <label for="subdomain_name">Subdomain Name:</label>
+    <input type="text" id="subdomain_name" name="subdomain_name" required>
+    <button type="submit">Add Subdomain</button>
+</form>
+{% endblock %}

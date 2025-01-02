@@ -49,6 +49,13 @@
                             DNS Management
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ 'active' if 'domain' in request.url.path else '' }}" href="/domain">
+                            <i class="bi bi-globe {{ 'text-primary' if 'domain' in request.url.path else '' }}"></i>
+                            Domain Management
+                        </a>
+                    </li>
+                    
                     
                 </ul>
             </nav>
